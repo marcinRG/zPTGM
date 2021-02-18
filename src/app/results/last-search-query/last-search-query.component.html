@@ -1,0 +1,13 @@
+<div class="previous-wrapper">
+  <div *ngIf="(lastQuery.category || lastQuery.text)">
+    <label class="label">Poprzednie wyszukanie:</label>
+    <label class="label" *ngIf="lastQuery.category">Kategoria:</label>
+    <input type="text" *ngIf="lastQuery.category" class="last-query" disabled [value]="lastQuery.category"/>
+    <label class="label" *ngIf="lastQuery.text">Szukana fraza:</label>
+    <input type="text" class="last-query" *ngIf="lastQuery.text" disabled [value]="lastQuery.text"/>
+  </div>
+  <div *ngIf="!lastQuery.category && !lastQuery.text">
+    <p class="previous-info">Brak poprzednich wyszukiwań...</p>
+  </div>
+</div>
+

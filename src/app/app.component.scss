@@ -1,0 +1,152 @@
+*,
+html,
+body {
+  font-family: 'Verdana', sans-serif;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app-title {
+  padding: 10px;
+  text-align: center;
+}
+
+.app {
+  display: block;
+  margin: 0 auto;
+  width: 70%;
+  background-color: #e2e1e1;
+  padding: 40px 20px;
+}
+
+.form-wrapper,
+.previous-wrapper,
+.results-wrapper,
+.error-wrapper,
+.loading-wrapper {
+  width: 100%;
+  background-color: whitesmoke;
+  display: grid;
+  grid-row-gap: 5px;
+  padding: 20px 10px;
+  border: 1px solid grey;
+  margin-bottom: 30px;
+}
+
+.error-wrapper,
+.loading-wrapper {
+  position: relative;
+  height: 400px;
+  width: 100%;
+
+  .info-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    font-size: 25px;
+    text-transform: uppercase;
+  }
+
+}
+
+.results-wrapper {
+  .row-wrapper {
+    width: 98%;
+    overflow: hidden;
+    height: 30px;
+    margin: 30px auto 10px;
+
+    &:after {
+      clear: both;
+    }
+  }
+
+  .button-row {
+    width: 98%;
+    margin: 30px auto 30px;
+    text-align: right;
+
+  }
+
+  .more-button {
+    padding: 10px 30px;
+    line-height: 30px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+
+    &[disabled] {
+      color: grey;
+      cursor: not-allowed;
+      background-color: lightgray;
+    }
+
+  }
+
+  .current-page,
+  .results-summary {
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    padding: 0 10px;
+    float: left;
+    color: gray;
+  }
+
+  .results-summary {
+    float: right;
+  }
+
+}
+
+.previous-wrapper {
+  .previous-info {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.label {
+  width: 100%;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.input[type=text],
+.last-query,
+.select {
+  outline: 0;
+  width: 100%;
+  font-size: 14px;
+  background-color: white;
+  border: 1px solid lightgray;
+  padding: 10px;
+}
+
+.option {
+  outline: 0;
+  width: 100%;
+  font-size: 14px;
+  background-color: white;
+  border: 1px solid lightgray;
+  padding: 10px;
+}
+
+.results-table {
+  margin: 30px;
+  border: 1px solid lightgray;
+  border-collapse: collapse;
+
+
+  td {
+    border: 1px solid lightgray;
+    padding: 10px 5px;
+    font-size: 14px;
+  }
+
+}

@@ -1,0 +1,25 @@
+<div class="app">
+
+  <h3 class="app-title">{{title}}</h3>
+
+  <app-search [searchCategories]="searchCategories"></app-search>
+  <app-results [previousQuery]="previousQuery" [searchState]="searchResults.searchState"
+               [results]="searchResults"></app-results>
+
+
+  <select [(ngModel)]="category" (change)="change()">
+    <option *ngFor="let c of categories">{{ c }}</option>
+  </select>
+
+  <h3>search string: {{ searchString }}</h3>
+  <input (keyup)="change()" [(ngModel)]="searchString"/>
+
+  <h1>results:</h1>
+  <div *ngFor="let result of results$ | async">
+    {{ result | json }}
+    <button *ngIf="toLoad$" (click)="loadMore()">load more</button>
+  </div>
+
+</div>
+
+

@@ -1,0 +1,9 @@
+<div class="form-wrapper">
+  <label class="label">Wybierz kategorię:</label>
+  <select name="categories" class="select" (change)="changeHandler()">
+    <option hidden selected class="option">Wybierz coś...</option>
+    <option *ngFor="let category of searchCategories" [value]="category.value">{{category.name}}</option>
+  </select>
+  <label class="label">Wpisz szukaną frazę:</label>
+  <input type="text" placeholder="wpisz coś" class="input" (input)="inputHandler()"/>
+</div>
