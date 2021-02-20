@@ -1,12 +1,12 @@
-<app-last-search-query [lastQuery]="previousQuery"></app-last-search-query>
+<app-last-search-query></app-last-search-query>
 
 <div class="results-wrapper" *ngIf="showResults()">
   <label class="label">Wyniki:</label>
   <div class="row-wrapper">
-    <app-current-page [currentPage]="results.results.currentPage" [elementCount]="results.results.count"
-                      [elementsPerPage]="results.results.itemsPerPage"></app-current-page>
-    <app-results-summary [currentPage]="results.results.currentPage" [elementCount]="results.results.count"
-                         [elementsPerPage]="results.results.itemsPerPage"></app-results-summary>
+    <!--    <app-current-page [currentPage]="results.results.currentPage" [elementCount]="results.results.count"-->
+    <!--                      [elementsPerPage]="results.results.itemsPerPage"></app-current-page>-->
+    <!--    <app-results-summary [currentPage]="results.results.currentPage" [elementCount]="results.results.count"-->
+    <!--                         [elementsPerPage]="results.results.itemsPerPage"></app-results-summary>-->
   </div>
   <table class="results-table">
     <thead>
@@ -27,6 +27,9 @@
   <div class="button-row">
     <button class="more-button" (click)="readMoreData()" [disabled]="disableButton()">More ...</button>
   </div>
+</div>
+<div class="blank-wrapper" *ngIf="showBlank()">
+  <p class="info-text">Select category and type something in text field....</p>
 </div>
 <div class="loading-wrapper" *ngIf="showLoading()">
   <p class="info-text">Loading....</p>

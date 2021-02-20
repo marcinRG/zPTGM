@@ -25,7 +25,8 @@ body {
 .previous-wrapper,
 .results-wrapper,
 .error-wrapper,
-.loading-wrapper {
+.loading-wrapper,
+.blank-wrapper {
   width: 100%;
   background-color: whitesmoke;
   display: grid;
@@ -36,10 +37,12 @@ body {
 }
 
 .error-wrapper,
-.loading-wrapper {
+.loading-wrapper,
+.blank-wrapper {
   position: relative;
   height: 400px;
   width: 100%;
+  text-align: center;
 
   .info-text {
     position: absolute;

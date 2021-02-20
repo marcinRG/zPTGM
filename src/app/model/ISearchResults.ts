@@ -1,7 +1,7 @@
-import {SearchStates} from './SearchStates';
+import {PageStates} from './PageStates';
 
 export interface ISearchResults {
-  searchState: SearchStates;
+  searchState: PageStates;
   results: {
     count: number;
     itemsPerPage: number;

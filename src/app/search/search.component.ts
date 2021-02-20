@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ICategory} from '../model/ICategory';
+import {SearchService} from '../services/search.service';
 
 @Component({
   selector: 'app-search',
@@ -9,18 +10,18 @@ export class SearchComponent implements OnInit {
 
   @Input() searchCategories: ICategory[];
 
-  constructor() {
+  constructor(private searchService: SearchService) {
   }
 
   ngOnInit(): void {
   }
 
-  changeHandler(): void {
-    console.log('change option');
+  changeCategoryHandler(event: any): void {
+    this.searchService.changeCategory(event);
   }
 
-  inputHandler(): void {
-    console.log('input handler');
+  changeTextSearchHandler(event: any): void {
+    this.searchService.changeSearchText(event);
   }
 
 }
