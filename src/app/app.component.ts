@@ -1,9 +1,6 @@
 import {Component} from '@angular/core';
 import {ViewEncapsulation} from '@angular/core';
 import {ICategory} from './model/ICategory';
-import {PageStates} from './model/PageStates';
-import {ISearchResults} from './model/ISearchResults';
-
 
 
 @Component({
@@ -20,15 +17,6 @@ export class AppComponent {
     {name: 'Starship', value: 'starships'},
     {name: 'Wrong category', value: 'wrong_category'}
   ];
-  searchResults: ISearchResults = {
-    searchState: PageStates.ERROR,
-    results: {
-      count: 60,
-      itemsPerPage: 10,
-      hasMorePages: true,
-      currentPage: 6
-    },
-  };
 
   constructor() {
   }

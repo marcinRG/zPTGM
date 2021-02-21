@@ -187,5 +187,3 @@ function transformArrayToObject(array: any[]): object {
   });
   return obj;
 }
-
-

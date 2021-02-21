@@ -17,5 +17,4 @@ export class ObjectDisplayComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

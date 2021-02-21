@@ -30,3 +30,4 @@ Serwis udostępnia następujące dane:
 * Żeby ograniczyć ilość zapytań, dane wprowadzane przez użytkownika są debouce'owane. **Uwaga!** przez zastosowanie `combineLatest` pierwsze zapytanie na serwer wysyłane jest dopiero wtedy, kiedy użytkownik zmieni kategorię i wpisze coś w pole wyszukiwania
 * Nie rozumiem o co chodzi w tej części zadania: _**ładowanie kolejnych wyników powinno wyświetlać sumę poprzednich i obecnych wyników**_ - zrozumiałem, że chodzi o zrobienie standardowych komponentów typu strona y z x wszystkich, albo pokazuje od a do b z c rezultatów.
 * Dodałem własny komponent zawierający poprzednie wyszukania, którego nie było w specyfikacji zadania.
+* W treści zadania nie było zaznaczone, że należy wykorzystać istniejący kod. Dlatego w ogóle go nie wykorzystałem.

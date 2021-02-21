@@ -23,6 +23,4 @@ export class ResultsSummaryComponent implements OnInit {
   getMaxResult() {
     return (this.currentPage) * this.elementsPerPage;
   }
-
-
 }
