@@ -16,9 +16,35 @@ body {
 .app {
   display: block;
   margin: 0 auto;
-  width: 70%;
+  width: 100%;
   background-color: #e2e1e1;
   padding: 40px 20px;
+
+  @media screen {
+
+    @media (min-width: 1024px) {
+      width: 70%;
+    }
+  }
+
+}
+
+.object-display {
+  width: 200px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+
+  @media screen {
+
+    @media (min-width: 1024px) {
+      width: 600px;
+    }
+  }
+
+  span {
+    margin: 0 4px;
+  }
 }
 
 .form-wrapper,
@@ -36,6 +62,13 @@ body {
   margin-bottom: 30px;
 }
 
+.no-results-wrapper {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  text-align: center;
+}
+
 .error-wrapper,
 .loading-wrapper,
 .blank-wrapper {
@@ -43,16 +76,15 @@ body {
   height: 400px;
   width: 100%;
   text-align: center;
+}
 
-  .info-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
-    font-size: 25px;
-    text-transform: uppercase;
-  }
-
+.info-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  font-size: 25px;
+  text-transform: uppercase;
 }
 
 .results-wrapper {
@@ -65,6 +97,21 @@ body {
     &:after {
       clear: both;
     }
+
+    &.summaries {
+      display: none;
+      @media screen {
+
+        @media (min-width: 1024px) {
+          display: block;
+        }
+      }
+    }
+
+  }
+
+  .table-wrapper {
+    width: 100%;
   }
 
   .button-row {
@@ -141,7 +188,8 @@ body {
 }
 
 .results-table {
-  margin: 30px;
+  width: 90%;
+  margin: 30px auto;
   border: 1px solid lightgray;
   border-collapse: collapse;
 

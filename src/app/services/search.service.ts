@@ -95,7 +95,7 @@ export class SearchService {
     return dataStream;
   }
 
-  private mergedLinksStream() {
+  private mergedLinksStream(): Observable<ILink> {
     const linkStream1: Observable<ILink> = this.getCategoryAndText().pipe(
       map((event: IHasCategory & IHasText) => {
         return {

@@ -2,30 +2,37 @@
 
 <div class="results-wrapper" *ngIf="showResults()">
   <label class="label">Wyniki:</label>
-  <div class="row-wrapper">
-    <!--    <app-current-page [currentPage]="results.results.currentPage" [elementCount]="results.results.count"-->
-    <!--                      [elementsPerPage]="results.results.itemsPerPage"></app-current-page>-->
-    <!--    <app-results-summary [currentPage]="results.results.currentPage" [elementCount]="results.results.count"-->
-    <!--                         [elementsPerPage]="results.results.itemsPerPage"></app-results-summary>-->
+  <div class="row-wrapper summaries">
+    <app-current-page [currentPage]="pageState.currentPage" [elementCount]="data.count"
+                      [elementsPerPage]="itemsPerPage" *ngIf="dataIsNotEmpty()"></app-current-page>
+    <app-results-summary [currentPage]="pageState.currentPage" [elementCount]="data.count"
+                         [elementsPerPage]="itemsPerPage" *ngIf="dataIsNotEmpty()"></app-results-summary>
   </div>
-  <table class="results-table">
-    <thead>
-    <tr>
-      <td>Kolumna 1</td>
-      <td>Kolumna 2</td>
-      <td>Kolumna 3</td>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>Kolumna 1</td>
-      <td>Kolumna 2</td>
-      <td>Kolumna 3</td>
-    </tr>
-    </tbody>
-  </table>
-  <div class="button-row">
-    <button class="more-button" (click)="readMoreData()" [disabled]="disableButton()">More ...</button>
+  <div class="table-wrapper" *ngIf="dataIsNotEmpty()">
+    <table class="results-table">
+      <thead>
+      <tr>
+        <td>No.</td>
+        <td>Object</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let element of data.resultsTable; index as i">
+        <td>{{i + 1 + (data.currentPage - 1) * itemsPerPage }}</td>
+        <td>
+          <app-object-display [obj]="element"></app-object-display>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="button-row">
+      <button class="more-button" (click)="readMoreData()" [disabled]="disableButton()">More ...</button>
+    </div>
+  </div>
+  <div class="no-results-wrapper" *ngIf="!dataIsNotEmpty()">
+    <p class="info-text">
+      No results... :-(
+    </p>
   </div>
 </div>
 <div class="blank-wrapper" *ngIf="showBlank()">
@@ -35,5 +42,5 @@
   <p class="info-text">Loading....</p>
 </div>
 <div class="error-wrapper" *ngIf="showError()">
-  <p class="info-text">Error occured!</p>
+  <p class="info-text">Error occurred!</p>
 </div>
